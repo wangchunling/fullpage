@@ -1,0 +1,736 @@
+/*
+    reset
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+html {
+    -webkit-text-size-adjust: none;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img {
+    border: 0;
+    max-width: 100% !important;
+    height: auto !important;
+}
+a {
+    text-decoration: none;
+}
+/*
+    修复部分手机不支持border-radius百分比
+*/
+
+audio {
+    display: none;
+}
+#fp-nav.right {
+    right: 0;
+}
+#fp-nav span, .fp-slidesNav span {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+/*
+    canvas样式
+*/
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+.first_page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/cover.png) no-repeat left top;
+    background-size: 100% 100%;
+}
+#daubCanvas {
+    display: none;
+    position: absolute;
+    z-index: 1000000;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    background-image: none !important;
+}
+/*
+    定制每个页面的样式
+*/
+
+.section, .slide {
+    text-align: center;
+    position: relative;
+}
+#fullpage {
+    display: none;
+}
+.section > img {
+    width: 100% !important;
+    height: 100% !important;
+}
+/*首页背景*/
+
+#section0 {
+    background: url(../images/index.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*场地背景*/
+
+#section1 {
+    background: url(../images/field.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section1.active > img {
+    -webkit-animation: bounceInLeft 1s 0.5s ease both;
+}
+/*年份背景*/
+
+#section2 {
+    background: url(../images/f8-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section3 {
+    background: url(../images/f9-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section4 {
+    background: url(../images/f10-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section5 {
+    background: url(../images/f11-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section6 {
+    background: url(../images/f12-bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+.section.year.active img {
+    -webkit-animation: fadeInBottom 1s 0.5s ease both;
+}
+@-webkit-keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+/*邀请函文字*/
+
+#section7 {
+    background: url(../images/yqh.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*会议安排*/
+
+#section8 .fp-slides {
+    color: #fff;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    right: 0;
+    height: 180px;
+}
+#section8 .fp-slides .slide {
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#section8 .fp-slides .slide p {
+    padding-left: 10px;
+}
+#section8 .fp-slides #slide2 p {
+    margin-top: 38px;
+}
+#section8 .fp-slides #slide3 p {
+    margin-top: 23px;
+}
+#section8 .fp-slides .slide ul {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#section8 .fp-slides .slide ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #e1c991;
+}
+#section8 .fp-slidesNav.bottom {
+    bottom: 105px;
+}
+#section8 {
+    background: url(../images/meeting.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section8 .btn_group {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#section8.active > img {
+    /*-webkit-animation: bounceInLeft 1s 0.5s ease both;*/
+}
+#section8.active .btn_group {
+    /*-webkit-animation: bounceInLeft 1s 1s ease both;*/
+}
+#section8 button {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    width: 40%;
+    margin-left: 25%;
+    display: block;
+    background: #dbb866;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    position: relative;
+    margin: 15px auto;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: none;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+/*二维码报名*/
+
+.sign_wrap {
+    z-index: 999;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: url(../images/yqh.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+.sign_wrap img {
+    z-index: 19;
+}
+.sign_wrap .sign {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 29%;
+    left: 5%;
+    right: 5%;
+    color: #d5b465;
+    font-size: 12px;
+}
+/*.sign_wrap.active .sign {
+    -webkit-animation: bounceInLeft 1s 1s ease both;
+}*/
+
+.sign_wrap .sign .input-group {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.sign_wrap .sign .input-group-addon {
+    width: 18%;
+    text-align: left;
+    display: inline-block;
+}
+.sign_wrap .sign .input-must {
+    width: 13%;
+    text-align: right;
+    display: inline-block;
+}
+.sign_wrap .sign input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 63%;
+    border-width: 0;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    margin-left: 2%;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-appearance: none;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+.sign_wrap .sign input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+.sign_wrap .sign span, .sign_wrap .sign input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sign_wrap .sign button {
+    color: rgba(0, 0, 0, 0.7);
+    width: 30%;
+    margin-left: 25%;
+    display: block;
+    background: #dbb866;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    position: relative;
+    margin: 15px auto;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: none;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+.sign_wrap .sign .tip {
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.sign_wrap .sign .tip1 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.sign_wrap .sign .tip2 {
+    text-align: left;
+    margin-top: 30px;
+}
+.sign_wrap .close {
+    z-index: 99999999;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+}
+.sign_wrap .close img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+/*论坛介绍*/
+
+#section10 {
+    background: url(../images/intro.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section10.active > img {
+    -webkit-animation: bounceInLeft 1s 0.5s ease both;
+}
+/*人物介绍*/
+
+#section11 .slide img {
+    width: 100%;
+    height: 100% !important;
+}
+/*#section11 .slide.active img {
+    -webkit-animation: bounceInLeft 1s 0.5s ease both;
+}*/
+
+#section11 .fp-slidesNav {
+    width: 100% !important;
+    left: 0 !important;
+    margin: 0 !important;
+}
+#section11 .fp-slidesNav * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#section11 .fp-slidesNav li {
+    width: auto;
+    height: auto;
+    margin: 0 3px;
+    position: relative;
+    display: inline-block;
+}
+#section11 .fp-slidesNav li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#section11 .fp-slidesNav span {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 0 solid transparent;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    transition: 0.2s all;
+}
+#section11 .fp-slidesNav ul li:nth-child(1) span {
+    background: url(../images/peo1_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 .fp-slidesNav ul li:nth-child(2) span {
+    background: url(../images/peo2_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 .fp-slidesNav ul li:nth-child(3) span {
+    background: url(../images/peo3_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 .fp-slidesNav ul li:nth-child(4) span {
+    background: url(../images/peo4_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 .fp-slidesNav ul li:nth-child(5) span {
+    background: url(../images/peo5_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 .fp-slidesNav ul li:nth-child(6) span {
+    background: url(../images/peo6_head.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+.fp-slidesNav.bottom {
+    bottom: 40px;
+}
+#section11 .fp-slidesNav .active span {
+    width: 60px;
+    height: 60px;
+    top: 10px;
+    left: 0;
+}
+#section11 .fp-slidesNav ul {
+    -webkit-perspective: 500;
+}
+#section11 .fp-controlArrow, #section8 .fp-controlArrow {
+    display: none;
+}
+#section11 #slide1 {
+    background: url(../images/peo1.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 #slide2 {
+    background: url(../images/peo2.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 #slide3 {
+    background: url(../images/peo3.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 #slide4 {
+    background: url(../images/peo4.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 #slide5 {
+    background: url(../images/peo5.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#section11 #slide6 {
+    background: url(../images/peo6.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*无界发布会*/
+
+#section12 {
+    background: url(../images/wujie.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*科技软件*/
+
+#section13 {
+    background: url(../images/software.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*尾页*/
+
+#section14 {
+    background: url(../images/last.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+/*动画效果*/
+
+@-webkit-keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-2000px);
+    }
+    60% {
+        -webkit-transform: translateX(30px);
+    }
+    80% {
+        -webkit-transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+/*
+    2014 10 23 邀请函优化
+*/
+/*
+    音乐控制
+*/
+
+.music_control {
+    z-index: 999999;
+    position: fixed;
+    width: 70px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.music_control .music_state {
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    float: left;
+    opacity: 0;
+    margin-left: 5px;
+}
+.music_control .music_icon {
+    float: right;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    background: url(../images/music.png) no-repeat left top;
+    background-size: 100% 100%;
+}
+.music_control .music_state.fadeIn {
+    -webkit-animation: fadeInLeft 1s ease-in-out both;
+}
+@-webkit-keyframes fadeInLeft {
+    0% {
+        -webkit-transform: translateX(-45px);
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(-45px);
+        opacity: 0;
+    }
+}
+.music_control.play .music_icon {
+    -webkit-animation: rotate 1s linear both infinite;
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+/*
+    上滑提示
+*/
+
+.swipe_tip {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    z-index: 999999;
+    display: none;
+}
+.swipe_tip p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -7px 0 0 -14px;
+    width: 25px;
+    height: 14px;
+    background: url(../images/swipe_tip.png) no-repeat left top;
+    background-size: 100% 100%;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes start {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+    }
+}
+.nav_group {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 50px;
+}
+.nav_group a {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+.sign_wrap .ewm {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 33%;
+    left: 5%;
+    right: 5%;
+    font-size: 12px;
+    color: #fff;
+}
+.sign_wrap .ewm_tip {
+    overflow: hidden;
+    line-height: 16px;
+}
+.sign_wrap .ewm_tip p:nth-child(2) {
+    text-indent: 20px;
+}
+.sign_wrap .ewm_tip p:nth-child(3) {
+    float: right;
+    clear: both;
+}
+.sign_wrap .ewm img {
+    margin: 10px auto;
+    max-width: 150px !important;
+    display: block;
+}
+.sign_wrap .sign_tip {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 29%;
+    left: 5%;
+    right: 5%;
+    color: #fff;
+    font-size: 14px;
+    overflow: hidden;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.sign_wrap .sign_tip p:nth-child(1) {
+    text-indent: 20px;
+}
+.sign_wrap .sign_tip p:nth-child(2), .sign_wrap .sign_tip p:nth-child(3) {
+    clear: both;
+    float: right;
+}
+.sign_wrap .sign_tip p:nth-child(2) {
+    margin-top: 30px;
+}
+.loading {
+    background: #d2000e;
+    position: absolute;
+    z-index: 9999999999;
+    width: 100%;
+    height: 100%;
+}
+.loading .spinner7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -35px;
+    width: 70px;
+    text-align: center;
+}
+.loading .spinner7 > div {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
+    animation: bouncedelay 1.4s infinite ease-in-out both;
+}
+.loading .spinner7 .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loading .spinner7 .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0.0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+    }
+}
+.back {
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+}
+.back img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}

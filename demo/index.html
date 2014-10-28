@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>国际沙龙美发</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <!-- 
+        一开始没注册，没通过审核，两个值都是0
+        注册以后has_reg为1
+        通过审核以后has_pass为1
+        user_name_data模拟用户姓名
+     -->
+    <input type="hidden" id="has_reg" value="0">
+    <input type="hidden" id="has_pass" value="1">
+    <input type="hidden" id="back_from_index2" value="1">
+    <input type="hidden" id="user_name_data" value="小溪">
+    <div class="loading">
+        <div class="spinner spinner7">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <canvas id="daubCanvas" class="lazy-bk" data-bk="images/cover.jpg"></canvas>
+
+    <!-- <div class="first_page"></div> -->
+    <!-- 去掉首页面 -->
+
+    <div class="swipe_tip">
+        <p></p>
+    </div>
+
+    <div id="fullpage">
+        <div class="music_control play">
+            <p class="music_state">开启</p>
+            <span class="music_icon"></span>
+        </div>
+
+        <!-- 首页 -->
+        <div class="section" id="section0">
+
+        </div>
+        <!-- 场地 -->
+        <div class="section" id="section1">
+            <img src="images/field_text.png" />
+        </div>
+
+        <!-- 年份 -->
+        <div class="section year" id="section2">
+            <img src="images/f8-txt.png" />
+        </div>
+        <div class="section year" id="section3">
+            <img src="images/f9-txt.png" />
+        </div>
+        <div class="section year" id="section4">
+            <img src="images/f10-txt.png" />
+        </div>
+        <div class="section year" id="section5">
+            <img src="images/f11-txt.png" />
+        </div>
+        <div class="section year" id="section6">
+            <img src="images/f12-txt.png" />
+        </div>
+
+        <!-- 邀请函文字 -->
+        <div class="section" id="section7">
+            <img src="images/yqh_text.png" />
+            <div class="nav_group">
+                <a href="http://api.map.baidu.com/marker?location=20.025388,110.224471&amp;title=绿地海森林&amp;content=海口市秀英区滨海大道长彤路南进800米&amp;output=html">
+                    <img src="images/icon_navigation.png">
+                </a>
+                <a href="tel:0898-66679666">
+                    <img src="images/icon_phone.png">
+                </a>
+            </div>
+        </div>
+
+
+        <!-- 会议安排 -->
+        <div class="section" id="section8">
+            <div class="slide" id="slide1">
+                <p>2014.11.11</p>
+                <ul>
+                    <li>第六届国际沙龙美发节开幕式</li>
+                    <li>美发科技时代</li>
+                    <li>美发高峰论坛</li>
+                    <li>『臻·美』新品上市酒会</li>
+                    <li>『形象家』美业互联网平台产品发布</li>
+                </ul>
+            </div>
+            <div class="slide" id="slide2">
+                <p>2014.11.12</p>
+                <ul>
+                    <li>《灵魂系列课程》</li>
+                    <li>CCTV《奋斗》栏目现场直播</li>
+                </ul>
+            </div>
+            <div class="slide" id="slide3">
+                <p>2014.11.13</p>
+                <ul>
+                    <li>《现代专业美发沙龙标准化运作》</li>
+                    <li>『无界』潮流发型发布会</li>
+                    <li>百万豪礼璀璨之夜</li>
+                </ul>
+            </div>
+            <div class="btn_group">
+                <button id="go_sign" type="button">领取入场二维码</button>
+                <button id="go_intro" type="button">高峰论坛介绍</button>
+            </div>
+        </div>
+
+
+        <!-- 二维码报名 -->
+        <div class="sign_wrap">
+            <img src="images/sign.png" />
+            <div class="sign">
+                <p class="tip1 tip">领取入场二维码</p>
+
+                <div class="input-group">
+                    <span class="input-group-addon">真实姓名</span>
+                    <input type="text" class="form-control required " id="username" name="username" placeholder="">
+                    <span class="input-must">(必填)</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">手机</span>
+                    <input type="tel" class="form-control required" id="phone" name="phone" placeholder="">
+                    <span class="input-must">(必填)</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">城市</span>
+                    <input type="text" class="form-control required" id="city" name="city" placeholder="">
+                    <span class="input-must">(必填)</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">身份证</span>
+                    <input type="text" class="form-control required" id="person_id" name="person_id" placeholder="身份证后6位">
+                    <span class="input-must">(必填)</span>
+                </div>
+                <p class="tip2 tip">请正确填写以上信息，通过系统验证后会自动生成二维码入场券</p>
+                <button id="submit_btn" type="button">确认提交</button>
+
+            </div>
+
+
+            <div class="sign_tip no_pass">
+                <p>您好，您的信息正在审核中，会有工作人员与您联系，请您耐心等待！</p>
+                <p>客服热线：4006226989</p>
+                <p>国际沙龙美发节组委会</p>
+            </div>
+            <div class="ewm">
+                <div class="ewm_tip">
+                    <p>尊敬的
+                        <span class="user_name"></span>先生/女士：
+                    </p>
+                    <p>恭喜您获得第六届国际沙龙美发节的邀请函，请提前一天到，做好签到工作，便于您及时参加11-13日得课程与活动。</p>
+                    <p>国际沙龙美发节组委会</p>
+
+                </div>
+                <img src="images/ewm.jpg">
+            </div>
+            <div class="close">
+                <img src="images/close.png" />
+            </div>
+        </div>
+
+    </div>
+    <audio id="bgm"></audio>
+
+    <script src="http://www.playwx.com/hd/static/common/js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.easings.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/daub.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>
